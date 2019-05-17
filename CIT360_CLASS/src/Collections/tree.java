@@ -32,6 +32,12 @@ public class tree {
 		System.out.println();
 	}
 	
+	/****************************************************
+	 * Method     : runMethods
+	 *
+	 * Purpose    : this will run through the methods.
+	 *
+	 ****************************************************/
 	private static void runMethods() {
 		System.out.println("Adding new album: I am a new album");
 		addAlbum("I am a new album");
