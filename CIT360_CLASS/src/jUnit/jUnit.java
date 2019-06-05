@@ -51,14 +51,13 @@ public class jUnit {
 	 * Method : divide
 	 ****************************************************/	
 	public static int divide (String numA, String numB) {
-		
 		if (checkInt(numA) && checkInt(numB) == true){
 			a = Integer.parseInt(numA);  
 			b = Integer.parseInt(numB);
 			
-			if (divideByZero(b)== true){
-				return a/b;
-			}
+				if (divideByZero(b)== true){
+					return a/b;
+				}
 		}
 		return 0;
 	}
