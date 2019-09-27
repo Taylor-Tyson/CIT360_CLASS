@@ -1,12 +1,20 @@
 package jUnit;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+
 import org.junit.jupiter.api.Test;
 
 public class jUnitTest {
-    
+		
 	//Test sum
     @Test
     public void testSum() {
@@ -31,7 +39,8 @@ public class jUnitTest {
     	int val = jUnit.sum("A","B");
         assertEquals(val, 0);
     }
-	
+    
+
     
     //Test sub
     @Test
@@ -80,22 +89,7 @@ public class jUnitTest {
     	int val = jUnit.multiply("A","B");
     	assertEquals(val,0);
     }
-        
-    
-    //Test divideByZero
-    @Test
-    public void testDivideByZeroTrue() {
-    	boolean val = jUnit.divideByZero(1);
-        assertTrue(val);
-    }
-    
-    @Test
-    public void testDivideByZeroFalse() {
-    	boolean val = jUnit.divideByZero(0);
-        assertFalse(val);
-    }
-    
-    
+            
     //Test Divide
     @Test
     public void testDivideZero() {
@@ -127,7 +121,6 @@ public class jUnitTest {
         assertEquals(val,0);
     }
     
-    
     //Test checkInt
     @Test
     public void testCheckIntTrue() {
@@ -141,4 +134,53 @@ public class jUnitTest {
         assertFalse(val);
     }
 	
+	@Test
+	public void testArrayEquals() {
+		Integer[] testArray = {2,4};
+		assertArrayEquals(testArray, jUnit.array(testArray));
+	}
+	
+    @Test
+    public void testAssertNotNull() {
+    	String A = "Hello";
+    	assertNotNull(jUnit.string(A));
+    }
+	
+    @Test
+    public void testAssertNull() {
+    	String A = null;
+    	assertNull(jUnit.string(A));
+    }
+    
+    @Test
+    public void testNotSame() {
+    	int val = jUnit.sum("7","5");
+        assertNotSame(val, 5);
+    }
+
+    @Test
+    public void testAssertSame() {
+    	int val = jUnit.sum("7","5");
+        assertSame(val, 12);
+    }
+    
+    @Test
+    public void testAssertThat() {
+    	int val = jUnit.sum("7","5");
+        assertThat(val, is (equalTo(12)));
+    }
+
+    //Test divideByZero
+    @Test
+    public void testDivideByZeroTrue() {
+    	boolean val = jUnit.divideByZero(1);
+        assertTrue(val);
+    }
+    
+    @Test
+    public void testDivideByZeroFalse() {
+    	boolean val = jUnit.divideByZero(0);
+        assertFalse(val);
+    }
+    
 }

@@ -6,6 +6,24 @@ public class jUnit {
 	static int b;
 	
 	/****************************************************
+	 * Method : string
+	 ****************************************************/
+	public static String string (String A) {
+		return A;
+	}
+
+	
+	/****************************************************
+	 * Method : array
+	 ****************************************************/
+	public static Integer[] array (Integer[] ar) {
+		int one = ar[0];
+		int two = ar[1];
+		Integer [] newArray = {one, two};
+		return newArray;
+	}
+	
+	/****************************************************
 	 * Method : sum
 	 ****************************************************/
 	public static int sum (String numA, String numB) {
@@ -90,4 +108,5 @@ public class jUnit {
 		}
 		return true;
 	}
+
 }
