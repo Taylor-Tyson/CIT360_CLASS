@@ -1,9 +1,6 @@
 package acp;
 
-import java.util.Scanner;
-
 public class AcpApp {
-	static Scanner scanner = new Scanner(System.in);
 	static Integer in1;
 	static Integer in2;
 	static String calc;
